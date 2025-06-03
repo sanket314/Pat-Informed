@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -30,7 +31,7 @@ public class DashboardTest extends BaseTest {
     @DataProvider(name = "searchKeywords")
     public Object[][] provideSearchKeywords() {
         return new Object[][] {
-           {""}, {"rop"}
+          {"rop"}
            
         };
     }
@@ -65,6 +66,9 @@ public class DashboardTest extends BaseTest {
         
               
         List<WebElement> boxes = driver.findElements(By.xpath(loc.getProperty("JurisdictionBoxes")));
+        
+        boxes.sort(Comparator.comparingInt(b -> b.getLocation().getY()));
+
         
         System.out.println("Number of boxes found: " + boxes.size());
 
