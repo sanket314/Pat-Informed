@@ -15,9 +15,15 @@ public class HomePage  extends BasePage{
 
 	public void searchPatent(String Patent) {
         type("Searchbox", Patent);  
-    }
+        if (Patent.isEmpty()) {
+            click("SearchButton");
+        }
+	}
 	
-
+	
+	public void waitForResultsToLoad() {
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("FirstResult"))));
+	}
 	public void clickFirstResult() {
         click("FirstResult");  
     }

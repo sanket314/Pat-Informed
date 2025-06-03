@@ -30,7 +30,7 @@ public class DashboardTest extends BaseTest {
     @DataProvider(name = "searchKeywords")
     public Object[][] provideSearchKeywords() {
         return new Object[][] {
-            {"so"},{"bu"}
+           {""}, {"rop"}
            
         };
     }
@@ -60,6 +60,7 @@ public class DashboardTest extends BaseTest {
                Assert.fail("No patent for this keyword: " + keyword);
            }
     	
+        homepage.waitForResultsToLoad();
         homepage.clickFirstResultPatent();
         
               

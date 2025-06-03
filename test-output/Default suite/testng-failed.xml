@@ -6,7 +6,7 @@
       <class name="testcases.DashboardTest">
         <methods>
           <include name="setUpBrowser"/>
-          <include name="testSearchFunctionality" invocation-numbers="1"/>
+          <include name="testSearchFunctionality" invocation-numbers="0 1"/>
           <include name="tearDownBrowser"/>
           <include name="Propload"/>
           <include name="setup"/>

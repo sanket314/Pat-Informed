@@ -37,9 +37,6 @@ public class BasePage {
         element.sendKeys(text);
     }
 
-    public String getText(String propertyKey) {
-        By locator = By.xpath(loc.getProperty(propertyKey));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).getText();
-    }
+
 
 }
