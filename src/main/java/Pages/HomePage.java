@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage  extends BasePage{
@@ -16,15 +17,14 @@ public class HomePage  extends BasePage{
         type("Searchbox", Patent);  
     }
 	
-	public void waitForResultsToLoad() {
-	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loc.getProperty("FirstResult"))));
-	}
+
 	public void clickFirstResult() {
         click("FirstResult");  
     }
 	
 	public void clickFirstResultPatent() {
-		click("FirstResultPatent");
+		 WebElement clickable = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(loc.getProperty("FirstResultPatent"))));
+		 clickable.click();
 	}
 	
 	

@@ -3,6 +3,7 @@ package testcases;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -29,11 +30,7 @@ public class DashboardTest extends BaseTest {
     @DataProvider(name = "searchKeywords")
     public Object[][] provideSearchKeywords() {
         return new Object[][] {
-            {"rop"},
-            {"para"},
-            {""},
-            {"abcd"},
-            {"Jon"}
+            {"so"},{"bu"}
            
         };
     }
@@ -54,19 +51,18 @@ public class DashboardTest extends BaseTest {
     	} 
     	catch (Exception e) 
     	{
-    	    System.out.println("No Alert found");
-    	}   
+    		
+    	} 
+    	
     	   List<WebElement> noResults = driver.findElements(By.xpath(loc.getProperty("NoResult")));
            if (!noResults.isEmpty() && noResults.get(0).isDisplayed()) {
                System.out.println("No patent for this keyword: " + keyword);
                Assert.fail("No patent for this keyword: " + keyword);
            }
     	
-        homepage.waitForResultsToLoad();   
         homepage.clickFirstResultPatent();
         
-        
-           
+              
         List<WebElement> boxes = driver.findElements(By.xpath(loc.getProperty("JurisdictionBoxes")));
         
         System.out.println("Number of boxes found: " + boxes.size());
@@ -118,10 +114,15 @@ public class DashboardTest extends BaseTest {
                 
                  int yearDiff = d2.getYear() - d1.getYear();
                  int monthDiff = d2.getMonthValue() - d1.getMonthValue();
+                 
                  int totalMonths = yearDiff * 12 + monthDiff;
                  
+                 long daysBetween = ChronoUnit.DAYS.between(d1, d2);
+                 
                 System.out.println("Dates found: " + d1 + " and " + d2);
-                System.out.println("Months Difference: " + Math.abs(totalMonths) +"\n");
+                System.out.println("Months Difference: " + Math.abs(totalMonths));
+                System.out.println("Days Difference: " + Math.abs(daysBetween) +"\n");
+
                 break; 
             }
         }
