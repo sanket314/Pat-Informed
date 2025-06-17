@@ -1,5 +1,6 @@
 package testcases;
 
+import org.testng.annotations.*;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -12,9 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 import Pages.HomePage;
 import base.BaseTest;
 
@@ -30,10 +29,16 @@ public class DashboardTest extends BaseTest {
 	
     @DataProvider(name = "searchKeywords")
     public Object[][] provideSearchKeywords() {
-        return new Object[][] {
-          {"rop"}
-           
-        };
+        String keywords = System.getProperty("keywords", "");
+        String[] keywordArray = keywords.split(",", -1);
+
+        Object[][] data = new Object[keywordArray.length][1];
+        for (int i = 0; i < keywordArray.length; i++) {
+            data[i][0] = keywordArray[i]; 
+        }
+
+        return data;
+
     }
 	
 		
@@ -58,7 +63,7 @@ public class DashboardTest extends BaseTest {
     	   List<WebElement> noResults = driver.findElements(By.xpath(loc.getProperty("NoResult")));
            if (!noResults.isEmpty() && noResults.get(0).isDisplayed()) {
                System.out.println("No patent for this keyword: " + keyword);
-               Assert.fail("No patent for this keyword: " + keyword);
+               Assert.fail("No patent for this keyword: " + "\n"+ "\n"+ keyword);
            }
     	
         homepage.waitForResultsToLoad();
@@ -67,7 +72,7 @@ public class DashboardTest extends BaseTest {
               
         List<WebElement> boxes = driver.findElements(By.xpath(loc.getProperty("JurisdictionBoxes")));
         
-        boxes.sort(Comparator.comparingInt(b -> b.getLocation().getY()));
+        boxes.sort(Comparator.comparingInt(e -> e.getLocation().getY()));
 
         
         System.out.println("Number of boxes found: " + boxes.size());

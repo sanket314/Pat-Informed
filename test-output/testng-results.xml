@@ -1,25 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="3" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-03T18:14:05 IST" name="Default suite" finished-at="2025-06-03T18:14:23 IST" duration-ms="18256">
+  <suite started-at="2025-06-04T16:38:42 IST" name="Default suite" finished-at="2025-06-04T16:40:52 IST" duration-ms="129523">
     <groups>
     </groups>
-    <test started-at="2025-06-03T18:14:05 IST" name="Default test" finished-at="2025-06-03T18:14:23 IST" duration-ms="18256">
+    <test started-at="2025-06-04T16:38:42 IST" name="Default test" finished-at="2025-06-04T16:40:52 IST" duration-ms="129523">
       <class name="testcases.DashboardTest">
-        <test-method is-config="true" signature="Propload()[pri:0, instance:testcases.DashboardTest@43c1b556]" started-at="2025-06-03T18:14:05 IST" name="Propload" finished-at="2025-06-03T18:14:05 IST" duration-ms="16" status="PASS">
+        <test-method is-config="true" signature="Propload()[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:38:42 IST" name="Propload" finished-at="2025-06-04T16:38:42 IST" duration-ms="48" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Propload -->
-        <test-method is-config="true" signature="setUpBrowser()[pri:0, instance:testcases.DashboardTest@43c1b556]" started-at="2025-06-03T18:14:05 IST" name="setUpBrowser" finished-at="2025-06-03T18:14:10 IST" duration-ms="5094" status="PASS">
+        <test-method is-config="true" signature="setUpBrowser()[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:38:42 IST" name="setUpBrowser" finished-at="2025-06-04T16:38:51 IST" duration-ms="8878" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBrowser -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.DashboardTest@43c1b556]" started-at="2025-06-03T18:14:10 IST" name="setup" finished-at="2025-06-03T18:14:10 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:38:51 IST" name="setup" finished-at="2025-06-04T16:38:51 IST" duration-ms="18" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testSearchFunctionality(java.lang.String)[pri:0, instance:testcases.DashboardTest@43c1b556]" started-at="2025-06-03T18:14:10 IST" name="testSearchFunctionality" data-provider="searchKeywords" finished-at="2025-06-03T18:14:23 IST" duration-ms="12868" status="PASS">
+        <test-method signature="testSearchFunctionality(java.lang.String)[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:38:51 IST" name="testSearchFunctionality" data-provider="searchKeywords" finished-at="2025-06-04T16:38:54 IST" duration-ms="2434" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[abc]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[No patent for this keyword: 
+
+abc]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: No patent for this keyword: 
+
+abc
+at org.testng.Assert.fail(Assert.java:111)
+at testcases.DashboardTest.testSearchFunctionality(DashboardTest.java:61)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchFunctionality -->
+        <test-method signature="testSearchFunctionality(java.lang.String)[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:38:54 IST" name="testSearchFunctionality" data-provider="searchKeywords" finished-at="2025-06-04T16:39:15 IST" duration-ms="21312" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,7 +82,142 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchFunctionality -->
-        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:testcases.DashboardTest@43c1b556]" started-at="2025-06-03T18:14:23 IST" name="tearDownBrowser" finished-at="2025-06-03T18:14:23 IST" duration-ms="203" status="PASS">
+        <test-method signature="testSearchFunctionality(java.lang.String)[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:39:15 IST" name="testSearchFunctionality" data-provider="searchKeywords" finished-at="2025-06-04T16:39:25 IST" duration-ms="10294" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(@class, 'margin-right')]//*[name()='svg'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.57, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: /var/folders/4f/f7nsmq_s7vs...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51676}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:51676/devtoo..., se:cdpVersion: 137.0.7151.57, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 13044854ca4751d10eed5d4e3760d750]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(@class, 'margin-right')]//*[name()='svg'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.57, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: /var/folders/4f/f7nsmq_s7vs...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51676}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:51676/devtoo..., se:cdpVersion: 137.0.7151.57, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 13044854ca4751d10eed5d4e3760d750
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at Pages.BasePage.click(BasePage.java:30)
+at Pages.HomePage.searchPatent(HomePage.java:19)
+at testcases.DashboardTest.testSearchFunctionality(DashboardTest.java:43)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchFunctionality -->
+        <test-method signature="testSearchFunctionality(java.lang.String)[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:39:25 IST" name="testSearchFunctionality" data-provider="searchKeywords" finished-at="2025-06-04T16:40:16 IST" duration-ms="50456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchFunctionality -->
+        <test-method signature="testSearchFunctionality(java.lang.String)[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:40:16 IST" name="testSearchFunctionality" data-provider="searchKeywords" finished-at="2025-06-04T16:40:27 IST" duration-ms="10982" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pqr]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[No patent for this keyword: 
+
+pqr]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: No patent for this keyword: 
+
+pqr
+at org.testng.Assert.fail(Assert.java:111)
+at testcases.DashboardTest.testSearchFunctionality(DashboardTest.java:61)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchFunctionality -->
+        <test-method signature="testSearchFunctionality(java.lang.String)[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:40:27 IST" name="testSearchFunctionality" data-provider="searchKeywords" finished-at="2025-06-04T16:40:51 IST" duration-ms="24255" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pro]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchFunctionality -->
+        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:testcases.DashboardTest@66d18979]" started-at="2025-06-04T16:40:51 IST" name="tearDownBrowser" finished-at="2025-06-04T16:40:52 IST" duration-ms="682" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownBrowser -->
